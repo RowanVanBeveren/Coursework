@@ -1,0 +1,6 @@
+#homeButton{
+-fx-background-image: url('/Resources/homeButton.jpg');
+-fx-background-size: cover;
+-fx-pref-width:30;
+
+}
