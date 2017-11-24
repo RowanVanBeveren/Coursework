@@ -5,7 +5,11 @@ package Controller;
  */
 public class LoginController {
 
+    public static void tryLogin() {
 
+        
+        Master.masterStage.setScene(Master.mainScene);
+    }
 
 
 

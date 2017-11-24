@@ -1,35 +1,31 @@
 package View;
 
-import javafx.event.ActionEvent;
+import Controller.MainSceneController;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  * Created by Rowan on 03-Nov-17.
  */
-public class Scene2  { // (View.Scene2 = View.Main page)
+public class MainScene { // (View.mainScene = View.LoginScene page)
 
-    private static Scene scene;
 
     private static TextField textFieldMessage1;
     private static TextField textFieldMessage2;
     private static TextField textFieldMessage3;
 
-    public static void launch(Stage stage, Scene parentScene) {
-
-        scene = parentScene;
+    public static Scene prepareScene() {
 
         Pane mainPage = new Pane();
-        Scene scene2 = new Scene(mainPage, 1024, 768);
-        scene2.getStylesheets().add("Resources/style.css");
+        Scene scene = new Scene(mainPage, 1024, 768);
+        scene.getStylesheets().add("Resources/style.css");
 
         Button myButton = new Button("Search");
         myButton.setLayoutX(20);
         myButton.setLayoutY(220);
-        myButton.setOnAction((ActionEvent ae) -> Scene3.launch(stage, scene2, scene));
+        myButton.setOnAction((ae) -> MainSceneController.search());
         mainPage.getChildren().add(myButton);
 
 
@@ -69,9 +65,11 @@ public class Scene2  { // (View.Scene2 = View.Main page)
         mainPage.getChildren().add(myMenu);
 
 
-        profileItem2.setOnAction((ActionEvent ae) -> Scene4.launch(stage, parentScene,scene ));
-        profileItem3.setOnAction((ActionEvent ae) -> stage.setScene(scene));
-        stage.setScene(scene2);
+        //profileItem2.setOnAction((ActionEvent ae) -> DetailsScene.launch(stage, parentScene, scene));
+//        profileItem3.setOnAction((ActionEvent ae) -> stage.setScene(scene));
+
+        profileItem3.setOnAction((ae) -> MainSceneController.goBackToLogin());
+
 
         Button homeButton = new Button();
         homeButton.setId("homeButton");
@@ -80,21 +78,8 @@ public class Scene2  { // (View.Scene2 = View.Main page)
         //homeButton.setOnAction((ActionEvent ae) -> refreshPage));
         mainPage.getChildren().add(homeButton);
 
-    }
-
-
-    public static void refreshPage(ActionEvent ae){
-
-
+        return scene;
 
     }
 
-    //public static void doSomething(ActionEvent ae) {
-        //Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        //alert.setTitle("Information Dialog");
-        //alert.setHeaderText(null);
-        //alert.setContentText("No database of books yet!");
-        //alert.showAndWait();
-    }
-
-
+}
