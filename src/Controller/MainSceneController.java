@@ -10,4 +10,15 @@ public class MainSceneController {
         Master.masterStage.setScene(Master.loginScene);
     }
 
+    public static void goToMyDetails(){
+        Master.masterStage.setScene(Master.detailsScene);
+    }
+
+    public static void goToMyBooks(){
+        Master.masterStage.setScene(Master.myBooksScene);
+    }
+
+    public static void refresh(){
+        Master.masterStage.setScene(Master.mainScene);
+    }
 }

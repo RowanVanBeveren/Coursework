@@ -14,4 +14,8 @@ public class SearchController {
         Master.masterStage.setScene(Master.detailsScene);
     }
 
+    public static void searchAgain(){
+        Master.masterStage.setScene(Master.searchScene);
+    }
+
 }

@@ -4,3 +4,9 @@
 -fx-pref-width:30;
 
 }
+
+#searchButton{
+-fx-background-image:url('/Resources/searchButton.jpg') ;
+-fx-background-size: cover;
+-fx-pref-width:30;
+}

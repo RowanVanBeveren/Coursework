@@ -2,22 +2,22 @@ package View;
 
 import Controller.DetailsController;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * Created by Rowan on 03-Nov-17.
  */
 public class DetailsScene { // (View.DetailsScene = My Details Pages)
 
+    private static TextField textFieldMessage1;
+
     public static Scene prepareStage() {
 
-        Pane mainPage = new Pane();
-        Scene scene = new Scene(mainPage, 1024, 768);
+        Pane detailsPage = new Pane();
+        Scene scene = new Scene(detailsPage, 1024, 768);
         scene.getStylesheets().add("Resources/style.css");
 
         VBox menu = new VBox();
@@ -30,16 +30,39 @@ public class DetailsScene { // (View.DetailsScene = My Details Pages)
         profileMenu.getItems().addAll(profileItem1, profileItem2, profileItem3);
 
         myMenu.getMenus().addAll(profileMenu);
-        mainPage.getChildren().add(myMenu);
+        detailsPage.getChildren().add(myMenu);
 
+        profileItem1.setOnAction((ae) -> DetailsController.goToMyBooks());
+        profileItem2.setOnAction((ae) -> DetailsController.goToDetails());
         profileItem3.setOnAction((ae) -> DetailsController.goBackToLogin());
 
-        Button myButton = new Button("Search");
-        myButton.setLayoutX(20);
-        myButton.setLayoutY(220);
-        myButton.setOnAction((ae) -> DetailsController.search());
+        Button homeButton = new Button();
+        homeButton.setId("homeButton");
+        homeButton.setLayoutX(80);
+        homeButton.setLayoutY(0);
+        homeButton.setOnAction((ae) -> DetailsController.goHome());
+        detailsPage.getChildren().add(homeButton);
 
-        mainPage.getChildren().add(myButton);
+        textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
+        textFieldMessage1.setLayoutX(110);
+        textFieldMessage1.setLayoutY(0);
+        textFieldMessage1.setPrefWidth(220);
+        textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
+        detailsPage.getChildren().add(textFieldMessage1);
+
+
+        Button searchButton = new Button();
+        searchButton.setId("searchButton");
+        searchButton.setLayoutX(330);
+        searchButton.setLayoutY(0);
+        searchButton.setOnAction((ae) -> DetailsController.search());
+        detailsPage.getChildren().add(searchButton);
+
+        Text pageTitle = new Text();
+        pageTitle.setText("Details Page");
+        pageTitle.setLayoutX(0);
+        pageTitle.setLayoutY(220);
+        detailsPage.getChildren().add(pageTitle);
 
         return scene;
 
