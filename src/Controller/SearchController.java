@@ -10,6 +10,11 @@ public class SearchController {
         Master.masterStage.setScene(Master.loginScene);
     }
 
+    //Menu tab
+    public static void goToMyBooks(){
+        Master.masterStage.setScene(Master.myBooksScene);
+    }
+
     public static void goToDetails(){
         Master.masterStage.setScene(Master.detailsScene);
     }

@@ -1,8 +1,12 @@
 package View;
 
 import Controller.MainSceneController;
+import Controller.Master;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -11,11 +15,13 @@ import javafx.scene.text.Text;
 
 /**
  * Created by Rowan on 03-Nov-17.
+ *
+
  */
 public class MainScene { // (View.mainScene = View.LoginScene page)
 
 
-    private static TextField textFieldMessage1;
+
     //private static TextField textFieldMessage2;
     //private static TextField textFieldMessage3;
 
@@ -33,12 +39,23 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
         mainPage.getChildren().add(searchButton);
 
 
-        textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
-        textFieldMessage1.setLayoutX(110);
-        textFieldMessage1.setLayoutY(0);
-        textFieldMessage1.setPrefWidth(220);
-        textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
-        mainPage.getChildren().add(textFieldMessage1);
+        Master.textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
+        Master.textFieldMessage1.setLayoutX(110);
+        Master.textFieldMessage1.setLayoutY(0);
+        Master.textFieldMessage1.setPrefWidth(220);
+        Master.textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
+        mainPage.getChildren().add(Master.textFieldMessage1);
+
+        Master.textFieldMessage1.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)){
+                    MainSceneController.search();
+
+                }
+
+            }
+        });
 
         //textFieldMessage2 = new TextField();
         //textFieldMessage2.setLayoutX(20);
@@ -83,7 +100,7 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
         Text pageTitle = new Text();
         pageTitle.setText("Main Page");
         pageTitle.setLayoutX(0);
-        pageTitle.setLayoutY(220);
+        pageTitle.setLayoutY(100);
         mainPage.getChildren().add(pageTitle);
 
         return scene;

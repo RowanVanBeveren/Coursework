@@ -22,7 +22,10 @@ public class LoginController {
         Master.masterStage.setScene(Master.mainScene);
     }
 
+    public static void addUser() {
 
+        Master.masterStage.setScene(Master.newUserScene);
+    }
 
 
 

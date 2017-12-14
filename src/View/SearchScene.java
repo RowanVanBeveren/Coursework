@@ -1,8 +1,13 @@
 package View;
 
+import Controller.MainSceneController;
+import Controller.Master;
 import Controller.SearchController;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -11,7 +16,7 @@ import javafx.scene.text.Text;
  * Created by Rowan on 03-Nov-17.
  */
 public class SearchScene {
-    private static TextField textFieldMessage1;
+
 
     public static Scene prepareScene() {
 
@@ -28,11 +33,12 @@ public class SearchScene {
         MenuItem profileItem3 = new MenuItem("Logout");
         profileMenu.getItems().addAll(profileItem1, profileItem2, profileItem3);
 
-        profileItem2.setOnAction((ae) -> SearchController.goToDetails());
+
 
         myMenu.getMenus().addAll(profileMenu);
         searchPage.getChildren().add(myMenu);
-
+        profileItem1.setOnAction((ae) -> SearchController.goToMyBooks());
+        profileItem2.setOnAction((ae) -> SearchController.goToDetails());
         profileItem3.setOnAction((ae) -> SearchController.goBackToLogin());
 
         Button homeButton = new Button("");
@@ -43,12 +49,12 @@ public class SearchScene {
         homeButton.setOnAction((ae) -> SearchController.goHome());
         searchPage.getChildren().add(homeButton);
 
-        textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
-        textFieldMessage1.setLayoutX(110);
-        textFieldMessage1.setLayoutY(0);
-        textFieldMessage1.setPrefWidth(220);
-        textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
-        searchPage.getChildren().add(textFieldMessage1);
+        Master.textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
+        Master.textFieldMessage1.setLayoutX(110);
+        Master.textFieldMessage1.setLayoutY(0);
+        Master.textFieldMessage1.setPrefWidth(220);
+        Master.textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
+        searchPage.getChildren().add(Master.textFieldMessage1);
 
         Button searchButton = new Button();
         searchButton.setId("searchButton");
@@ -62,6 +68,18 @@ public class SearchScene {
         pageTitle.setLayoutX(0);
         pageTitle.setLayoutY(220);
         searchPage.getChildren().add(pageTitle);
+
+        Master.textFieldMessage1.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)){
+                    SearchController.searchAgain();
+
+                }
+
+            }
+        });
+
 
 
         return scene;

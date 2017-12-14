@@ -2,10 +2,14 @@ package View;
 
 
 
-import Controller.DetailsController;
+
+import Controller.Master;
 import Controller.MyBooksController;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -16,7 +20,7 @@ import javafx.scene.text.Text;
  */
 public class MyBooksScene { // (View.MyBooksScene = My Books pages)
 
-    private static TextField textFieldMessage1;
+
 
     public static Scene prepareScene() {
 
@@ -47,12 +51,12 @@ public class MyBooksScene { // (View.MyBooksScene = My Books pages)
         homeButton.setOnAction((ae) -> MyBooksController.goHome());
         booksPage.getChildren().add(homeButton);
 
-        textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
-        textFieldMessage1.setLayoutX(110);
-        textFieldMessage1.setLayoutY(0);
-        textFieldMessage1.setPrefWidth(220);
-        textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
-        booksPage.getChildren().add(textFieldMessage1);
+        Master.textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
+        Master.textFieldMessage1.setLayoutX(110);
+        Master.textFieldMessage1.setLayoutY(0);
+        Master.textFieldMessage1.setPrefWidth(220);
+        Master.textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
+        booksPage.getChildren().add(Master.textFieldMessage1);
 
         Button searchButton = new Button();
         searchButton.setId("searchButton");
@@ -66,6 +70,18 @@ public class MyBooksScene { // (View.MyBooksScene = My Books pages)
         pageTitle.setLayoutX(0);
         pageTitle.setLayoutY(220);
         booksPage.getChildren().add(pageTitle);
+
+        Master.textFieldMessage1.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)){
+                    MyBooksController.searchAgain();
+
+                }
+
+            }
+        });
+
 
 
 
