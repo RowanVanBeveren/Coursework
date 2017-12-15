@@ -10,3 +10,10 @@
 -fx-background-size: cover;
 -fx-pref-width:30;
 }
+
+#backButton{
+-fx-background-image:url('/Resources/back.png') ;
+-fx-background-size: cover;
+-fx-pref-width:30;
+
+}

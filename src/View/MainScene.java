@@ -57,20 +57,7 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
             }
         });
 
-        //textFieldMessage2 = new TextField();
-        //textFieldMessage2.setLayoutX(20);
-        //textFieldMessage2.setLayoutY(140);
-        //textFieldMessage2.setPrefWidth(220);
-        //textFieldMessage2.setPromptText("Enter Author name");
-       // mainPage.getChildren().add(textFieldMessage2);
 
-
-     //   textFieldMessage3 = new TextField();
-       // textFieldMessage3.setLayoutX(20);
-       // textFieldMessage3.setLayoutY(180);
-        //textFieldMessage3.setPrefWidth(220);
-        //textFieldMessage3.setPromptText("Enter Genre");
-        //mainPage.getChildren().add(textFieldMessage3);
 
         VBox menu = new VBox();
 
