@@ -1,13 +1,13 @@
 package Model;
 
-public class Password {
+public class Passwords {
 
     private int passwordId;
     private String password;
 
-    public Password(int passwordId, String password){
-        this.passwordId;
-        this.password;
+    public Passwords(int passwordId, String password){
+        this.passwordId = passwordId;
+        this.password= password;
     }
 
     public int getPasswordId() {

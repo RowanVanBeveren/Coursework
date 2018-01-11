@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.Book;
-import Model.BookService;
+import Model.Books;
+import Model.BooksService;
 import Model.DatabaseConnection;
 import View.*;
 import javafx.application.Application;
@@ -42,10 +42,10 @@ public class Master extends Application {
         searchScene = SearchScene.prepareScene();
         newUserScene = AddUserScene.prepareScene();
 
-        ArrayList<Book> testList = new ArrayList<>();
-        BookService.selectAll(testList, database);
+        ArrayList<Books> testList = new ArrayList<>();
+        BooksService.selectAll(testList, database);
 
-        for (Book b: testList) {
+        for (Books b: testList) {
             System.out.println(b);
         }
 
@@ -81,7 +81,8 @@ public class Master extends Application {
         Optional<ButtonType> result = alert.showAndWait();
         if(result.get() == ButtonType.OK){
             terminate();
-            disconnect();
+
+
         }
         else{
             we.consume();
@@ -89,6 +90,7 @@ public class Master extends Application {
     }
     private static void terminate()
     {
+        database.disconnect();
         System.out.println("bye bye!");
         System.exit(0);
     }

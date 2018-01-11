@@ -1,20 +1,21 @@
 package Model;
 
-public class Librarian {
+public class Librarians {
 
     private int id;
     private String firstName;
     private String surname;
-    private String Rank;
+    private String rank;
     private int passwordId;
     private int userNameId;
 
-    public Librarian(int id, String firstName, String surname, String Rank, int passwordId, int userNameId){
-        this.id;
-        this.firstName;
-        this.surname;
-        this.Rank;
-        this.passwordId;
+    public Librarians(int id, String firstName, String surname, String rank, int passwordId, int userNameId){
+        this.id = id;
+        this.firstName = firstName;
+        this.surname = surname;
+        this.rank = rank;
+        this.passwordId = passwordId;
+        this.userNameId = userNameId;
     }
 
     public int getId() {
@@ -42,11 +43,11 @@ public class Librarian {
     }
 
     public String getRank() {
-        return Rank;
+        return rank;
     }
 
     public void setRank(String rank) {
-        Rank = rank;
+        rank = rank;
     }
 
     public int getPasswordId() {

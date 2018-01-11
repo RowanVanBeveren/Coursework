@@ -1,12 +1,12 @@
 package Model;
 
-public class Username {
+public class Usernames {
     private int userNameId;
     private String userName;
 
-    public Username(int userNameId, String userName){
-        this.userNameId;
-        this.userName;
+    public Usernames(int userNameId, String userName){
+        this.userNameId = userNameId;
+        this.userName = userName;
     }
 
     public int getUserNameId() {

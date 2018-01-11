@@ -1,6 +1,6 @@
 package Model;
 
-public class Member {
+public class Members {
 
     private int id;
     private String firstName;
@@ -12,17 +12,17 @@ public class Member {
     private int passwordId;
     private int userNameId;
 
-    public Member(  int id, String firstName, String surname, String town, String county, String postcode, String email, int passwordId, int userNameId){
+    public Members(int id, String firstName, String surname, String town, String county, String postcode, String email, int passwordId, int userNameId){
 
-          this.id;
-          this.firstName;
-          this.surname;
-          this.town;
-          this.county;
-          this.postcode;
-          this.email;
-          this.passwordId;
-          this.userNameId;
+          this.id = id;
+          this.firstName = firstName;
+          this.surname = surname;
+          this.town = town;
+          this.county = county;
+          this.postcode = postcode;
+          this.email= email;
+          this.passwordId = passwordId;
+          this.userNameId = userNameId;
 
     }
 

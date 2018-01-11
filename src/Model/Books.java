@@ -1,6 +1,6 @@
 package Model;
 
-public class Book {
+public class Books {
 
     private int id;
     private String name;
@@ -8,7 +8,7 @@ public class Book {
     private String genre;
     private int authorId;
 
-    public Book(int id, String name, int publisherId, String genre, int authorId) {
+    public Books(int id, String name, int publisherId, String genre, int authorId) {
         this.id = id;
         this.name = name;
         this.publisherId = publisherId;
