@@ -81,6 +81,7 @@ public class Master extends Application {
         Optional<ButtonType> result = alert.showAndWait();
         if(result.get() == ButtonType.OK){
             terminate();
+            disconnect();
         }
         else{
             we.consume();

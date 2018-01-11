@@ -32,6 +32,8 @@ public class BookService {
         }
     }
 
+    public static void save(Book book, DatabaseConnection database) { }
+
 
 
 
