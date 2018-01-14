@@ -28,6 +28,7 @@ public class Master extends Application {
     public static Scene myBooksScene;
     public static Scene searchScene;
     public static Scene newUserScene;
+    public static Scene librarianScene;
     public static TextField textFieldMessage1;
 
 
@@ -41,6 +42,7 @@ public class Master extends Application {
         myBooksScene = MyBooksScene.prepareScene();
         searchScene = SearchScene.prepareScene();
         newUserScene = AddUserScene.prepareScene();
+        librarianScene = LibrarianScene.prepareScene();
 
         ArrayList<Books> testList = new ArrayList<>();
         BooksService.selectAll(testList, database);
