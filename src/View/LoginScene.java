@@ -1,6 +1,7 @@
 package View;
 
 import Controller.LoginController;
+import Model.DatabaseConnection;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -9,13 +10,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import sun.plugin.dom.core.Text;
 
 import java.util.Optional;
+import java.util.Scanner;
+
+import static Controller.Master.database;
 
 
 public class LoginScene  {
 
-    public static TextField textFieldMessage1;
+    public static TextField userField;
     private static PasswordField passwordField;
 
     public static Scene prepareScene() {
@@ -29,19 +34,20 @@ public class LoginScene  {
         logoView.setY(60);
         loginPage.getChildren().add(logoView);
 
-        textFieldMessage1 = new TextField();
-        textFieldMessage1.setLayoutX(402);
-        textFieldMessage1.setLayoutY(364);
-        textFieldMessage1.setPrefWidth(220);
-        textFieldMessage1.setPromptText("Username");
-        loginPage.getChildren().add(textFieldMessage1);
+
+
+        userField = new TextField("");
+        userField.setLayoutX(402);
+        userField.setLayoutY(364);
+        userField.setPrefWidth(220);
+        userField.setPromptText("Username");
+        loginPage.getChildren().add(userField);
 
         passwordField = new PasswordField();
         passwordField.setLayoutX(402);
         passwordField.setLayoutY(394);
         passwordField.setPrefWidth(220);
         passwordField.setPromptText("Your password");
-        ;
         loginPage.getChildren().add(passwordField);
 
         Button login = new Button("Login");
@@ -54,7 +60,7 @@ public class LoginScene  {
         newUser.setLayoutY(0);
         loginPage.getChildren().add(newUser);
 
-        login.setOnAction((ae) -> LoginController.tryLogin()); // Changes the login page to the main page has to be here so it is declared after scene2 is
+        login.setOnAction((ae) -> LoginController.loginVerification(userField, passwordField, database));
         newUser.setOnAction((ae) -> LoginController.addUser());
         return scene;
 

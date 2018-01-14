@@ -32,12 +32,7 @@ public class AddUserScene {
         pageTitle.setLayoutY(100);
         addUserPage.getChildren().add(pageTitle);
 
-        Button returnButton = new Button();
-        returnButton.setId("backButton");
-        returnButton.setLayoutX(0);
-        returnButton.setLayoutY(0);
-        returnButton.setOnAction((ae) -> AddUserController.goBackToLogin());
-        addUserPage.getChildren().add(returnButton);
+
 
         newUserName = new TextField();//adds a box that you are able to write a message in
         newUserName.setLayoutX(110);
@@ -99,11 +94,19 @@ public class AddUserScene {
         addUserPage.getChildren().add(postcode);
 
         Button addUserButton = new Button();
-        addUserButton.setId("backButton");
-        addUserButton.setLayoutX(0);
+        addUserButton.setText("Save Changes");
+        addUserButton.setLayoutX(170);
         addUserButton.setLayoutY(0);
         addUserButton.setOnAction((ae) -> AddUserController.saveChanges());
         addUserPage.getChildren().add(addUserButton);
+
+
+        Button returnButton = new Button();
+        returnButton.setId("backButton");
+        returnButton.setLayoutX(0);
+        returnButton.setLayoutY(0);
+        returnButton.setOnAction((ae) -> AddUserController.goBackToLogin());
+        addUserPage.getChildren().add(returnButton);
 
         return scene;
 

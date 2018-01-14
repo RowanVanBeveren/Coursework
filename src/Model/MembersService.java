@@ -1,5 +1,8 @@
 package Model;
 
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,6 +38,18 @@ public class MembersService {
             System.out.println("Database select all error: " + resultsException.getMessage());
         }
     }
+
+
+    /*public static void loginCheck(List<Usernames> usernamesList , List<Passwords> passwordsList, TextField userField, PasswordField passwordField, DatabaseConnection database){
+
+        String userName = userField.getText();
+        String password = passwordField.getText();
+
+        String dUserName = "";
+        String dPassword = "";
+
+        PreparedStatement login = database.newStatement("SELECT UserNameID FROM UserNames WHERE UserName =`" + userName + "&& SELECT PasswordID FROM Passwords WHERE Password =`" + password+ "`"   );
+    }*/
 
 
 
