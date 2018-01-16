@@ -39,16 +39,16 @@ public class LoginController {
                         dPassword = result.getString("Password");
                     }
 
-                    if(password.equals(dPassword)){
-                        Master.masterStage.setScene(Master.mainScene);
-                    }
-                    else if(userField.getText().equals("") && passwordField.getText().equals("")){
+                     if(userField.getText().equals("") && passwordField.getText().equals("")){
                         Alert badLogin = new Alert(Alert.AlertType.ERROR);
                         badLogin.setTitle("No Login Details");
                         badLogin.setHeaderText("No Username or Password ");
                         badLogin.setContentText("No Username or Password please try again");
                         badLogin.showAndWait();
                     }
+                   else if(password.equals(dPassword)){
+                    Master.masterStage.setScene(Master.mainScene);
+                         }
                     else{
                         Alert badLogin = new Alert(Alert.AlertType.ERROR);
                         badLogin.setTitle("Bad Login");

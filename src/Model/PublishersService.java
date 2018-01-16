@@ -1,4 +1,4 @@
 package Model;
 
-public class PublishersService {
+public class PublishersService{
 }
