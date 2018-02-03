@@ -23,6 +23,7 @@ public class Master extends Application {
     public static Stage masterStage;
 
     public static Scene loginScene;
+    public static Scene librarianLoginScene;
     public static Scene detailsScene;
     public static Scene mainScene;
     public static Scene myBooksScene;
@@ -32,17 +33,20 @@ public class Master extends Application {
     public static TextField textFieldMessage1;
 
 
+
     public static void main(String[] args) {
 
         database = new DatabaseConnection("Database/Library management.db");
 
         loginScene = LoginScene.prepareScene();
+        librarianLoginScene = LibrarianLoginScene.prepareScene();
         detailsScene = DetailsScene.prepareStage();
         mainScene = MainScene.prepareScene();
         myBooksScene = MyBooksScene.prepareScene();
         searchScene = SearchScene.prepareScene();
         newUserScene = AddUserScene.prepareScene();
         librarianScene = LibrarianScene.prepareScene();
+
 
         ArrayList<Books> testList = new ArrayList<>();
         BooksService.selectAll(testList, database);

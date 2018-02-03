@@ -32,6 +32,6 @@ public class UsernamesService {
 
 
     //public static  selectById(int id, DatabaseConnection database) { }
-    public static void save(Usernames usernames, DatabaseConnection database) { }	// insert & update
+    public static void save(String userName, DatabaseConnection database) { }	// insert & update
     public static void deleteById(int id, DatabaseConnection database) { }
 }

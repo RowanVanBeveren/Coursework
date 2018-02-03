@@ -1,6 +1,7 @@
 package View;
 
 import Controller.DetailsController;
+
 import Controller.Master;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -78,8 +79,9 @@ public class DetailsScene { // (View.DetailsScene = My Details Pages)
 
             }
         });
-
-
+        /*if(searchBarDetails.getText().equals("")){
+        DetailsController.searchAlert();
+        }*/
         return scene;
 
     }

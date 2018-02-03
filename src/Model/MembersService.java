@@ -2,7 +2,9 @@ package Model;
 
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import Model.DatabaseConnection;
 
+import java.lang.reflect.Member;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -57,7 +59,25 @@ public class MembersService {
     //public static  selectById(int id, DatabaseConnection database) { }
 
 
-    public static void save(Members members, DatabaseConnection database) { }	// insert & update
+   /* public static void save(Members members, String FirstName , String Surname,  String Town, String Email, String Postcode, DatabaseConnection database) {
+
+        try
+    {
+        PreparedStatement statement = database.newStatement("INSERT INTO Members (FirstName, Surname) VALUES (?, ?)");
+
+        statement.setString(2, members.setFirstName(String firstName));
+        statement.setString(3, members.Surname);
+        statement.setString(4, members.Town);
+
+
+        if (statement != null) {
+            database.executeUpdate(statement);
+        }
+
+    }
+    catch (SQLException resultsexception) {
+        System.out.println("Database result processing error: " + resultsexception.getMessage());
+    }}	// insert & update*/
 
 
     public static void deleteById(int id, DatabaseConnection database) { }

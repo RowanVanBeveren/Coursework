@@ -3,6 +3,8 @@ package View;
 
 
 
+import Controller.DetailsController;
+
 import Controller.Master;
 import Controller.MyBooksController;
 import javafx.event.EventHandler;
@@ -21,6 +23,7 @@ import javafx.scene.text.Text;
 public class MyBooksScene { // (View.MyBooksScene = My Books pages)
 
 
+    private static TextField searchBarBooks;
 
     public static Scene prepareScene() {
 
@@ -81,7 +84,13 @@ public class MyBooksScene { // (View.MyBooksScene = My Books pages)
 
             }
         });
+        /*if( searchBarBooks.getText().equals("")){
 
+                MyBooksController.searchAlert();
+
+
+
+        }*/
 
 
 

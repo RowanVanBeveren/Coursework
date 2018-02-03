@@ -1,5 +1,7 @@
 package Controller;
 
+import javafx.scene.control.Alert;
+
 public class MainSceneController {
 
     public static void search(){
@@ -20,5 +22,13 @@ public class MainSceneController {
 
     public static void refresh(){
         Master.masterStage.setScene(Master.mainScene);
+    }
+
+    public static void searchAlert(){
+        Alert noSearch = new Alert(Alert.AlertType.ERROR);
+        noSearch.setTitle("Nothing searched");
+        noSearch.setHeaderText("Nothing in search box");
+        noSearch.setContentText("Nothing searched please enter in a book name or author");
+        noSearch.showAndWait();
     }
 }

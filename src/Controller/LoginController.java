@@ -60,7 +60,7 @@ public class LoginController {
 
                }
             } catch (SQLException resultsException) {
-            System.out.println("Database select all error: " + resultsException.getMessage());
+            System.out.println("Database comparison error: " + resultsException.getMessage());
         }
 
 
@@ -81,6 +81,9 @@ public class LoginController {
     }
 
 
+    public static void librarianLogin(){
+        Master.masterStage.setScene(Master.librarianLoginScene);
 
+    }
 
 }

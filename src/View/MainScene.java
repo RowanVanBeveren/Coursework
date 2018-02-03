@@ -1,6 +1,7 @@
 package View;
 
 import Controller.MainSceneController;
+
 import Controller.Master;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -89,6 +90,11 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
         pageTitle.setLayoutX(0);
         pageTitle.setLayoutY(100);
         mainPage.getChildren().add(pageTitle);
+
+        /*if( searchBarMain.getText().equals("")){
+            MainSceneController.searchAlert();
+
+        }*/
 
         return scene;
 

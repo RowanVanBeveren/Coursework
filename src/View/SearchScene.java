@@ -1,6 +1,7 @@
 package View;
 
 import Controller.MainSceneController;
+
 import Controller.Master;
 import Controller.SearchController;
 import javafx.event.EventHandler;
@@ -16,6 +17,7 @@ import javafx.scene.text.Text;
  * Created by Rowan on 03-Nov-17.
  */
 public class SearchScene {
+
 
 
     public static Scene prepareScene() {
@@ -79,7 +81,10 @@ public class SearchScene {
 
             }
         });
+       /*if( searchBar.getText().equals("")){
+            SearchController.searchAlert();
 
+       }*/
 
 
         return scene;

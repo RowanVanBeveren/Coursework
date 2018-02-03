@@ -33,6 +33,6 @@ public class PasswordsService {
 
 
     //public static  selectById(int id, DatabaseConnection database) { }
-    public static void save(Passwords passwords, DatabaseConnection database) { }	// insert & update
+    public static void save(String Password, DatabaseConnection database) { }	// insert & update
     public static void deleteById(int id, DatabaseConnection database) { }
 }
