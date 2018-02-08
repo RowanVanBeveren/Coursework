@@ -81,13 +81,15 @@ public class SearchScene {
 
             }
         });
-       /*if( searchBar.getText().equals("")){
-            SearchController.searchAlert();
 
-       }*/
+
+
+
 
 
         return scene;
+
+
 
     }
 }

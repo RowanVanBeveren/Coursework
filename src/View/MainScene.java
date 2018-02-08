@@ -34,14 +34,14 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
 
         Button searchButton = new Button();
         searchButton.setId("searchButton");
-        searchButton.setLayoutX(330);
+        searchButton.setLayoutX(340);
         searchButton.setLayoutY(0);
         searchButton.setOnAction((ae) -> MainSceneController.search());
         mainPage.getChildren().add(searchButton);
 
 
         Master.textFieldMessage1 = new TextField();//adds a box that you are able to write a message in
-        Master.textFieldMessage1.setLayoutX(110);
+        Master.textFieldMessage1.setLayoutX(120);
         Master.textFieldMessage1.setLayoutY(0);
         Master.textFieldMessage1.setPrefWidth(220);
         Master.textFieldMessage1.setPromptText("Search");// sets the text to <-- before you type anything
@@ -80,7 +80,7 @@ public class MainScene { // (View.mainScene = View.LoginScene page)
 
         Button homeButton = new Button();
         homeButton.setId("homeButton");
-        homeButton.setLayoutX(80);
+        homeButton.setLayoutX(90);
         homeButton.setLayoutY(0);
         homeButton.setOnAction((ae) -> MainSceneController.refresh());
         mainPage.getChildren().add(homeButton);

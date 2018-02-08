@@ -25,12 +25,6 @@ public class SearchController {
         Master.masterStage.setScene(Master.searchScene);
     }
 
-    public static void searchAlert(){
-        Alert noSearch = new Alert(Alert.AlertType.ERROR);
-        noSearch.setTitle("Nothing searched");
-        noSearch.setHeaderText("Nothing in search box");
-        noSearch.setContentText("Nothing searched please enter in a book name or author");
-        noSearch.showAndWait();
-    }
+
 
 }

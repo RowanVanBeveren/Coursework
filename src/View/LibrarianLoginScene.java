@@ -28,23 +28,23 @@ public class LibrarianLoginScene {
         Scene scene = new Scene(librarianLoginScene, 1024, 768);
         scene.getStylesheets().add("Resources/style.css");
 
-        Image logo = new Image("Resources/logo.png");
+        Image logo = new Image("Resources/LibrarianLoginLogo.png");
         ImageView logoView = new ImageView(logo);
-        logoView.setX(385);
+        logoView.setX(350);
         logoView.setY(60);
         librarianLoginScene.getChildren().add(logoView);
 
 
         libuserField = new TextField("");
         libuserField.setLayoutX(402);
-        libuserField.setLayoutY(364);
+        libuserField.setLayoutY(450);
         libuserField.setPrefWidth(220);
         libuserField.setPromptText("Username");
         librarianLoginScene.getChildren().add(libuserField);
 
         libpasswordField = new PasswordField();
         libpasswordField.setLayoutX(402);
-        libpasswordField.setLayoutY(394);
+        libpasswordField.setLayoutY(486);
         libpasswordField.setPrefWidth(220);
         libpasswordField.setPromptText("Your password");
         librarianLoginScene.getChildren().add(libpasswordField);
@@ -62,7 +62,7 @@ public class LibrarianLoginScene {
 
         Button login = new Button("Login");
         login.setLayoutX(577);
-        login.setLayoutY(430);
+        login.setLayoutY(530);
         librarianLoginScene.getChildren().add(login);
 
         Button returnButton = new Button();

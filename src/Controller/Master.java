@@ -76,6 +76,7 @@ public class Master extends Application {
 
 
 
+
     }
 
     private static void displayCloseDialog(WindowEvent we){
@@ -100,5 +101,8 @@ public class Master extends Application {
         System.out.println("bye bye!");
         System.exit(0);
     }
+
+
+
 
 }
